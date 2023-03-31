@@ -1,5 +1,9 @@
 # Google Images Reverse Search Downloader
 
+This is a simple script to download images from [Google Images Reverse Search](https://images.google.com/).
+
+Then, it uses [MaxUrl](https://github.com/qsniyg/maxurl/) to get the upscaled version of the image, if available.
+
 ### Usage
 
 ```
@@ -8,9 +12,13 @@ pnpm install
 pnpm start -i /tmp/Mickey.png -o MickeyHD.png
 ```
 
-This is a simple script to download images from [Google Images Reverse Search](https://images.google.com/).
+# Language
 
-Then, it uses [MaxUrl](https://github.com/qsniyg/maxurl/) to get the upscaled version of the image, if available.
+Only French is supported for now, but feel free to add your own language in the main script.
+
+Don't forget to make a pull request if you want to share your work :)
+
+----
 
 **FROM**
 
