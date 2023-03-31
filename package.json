@@ -1,0 +1,30 @@
+{
+  "name": "google-image-reverse-search-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.mjs",
+    "dev": "nodemon main.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iconv-lite": "^0.6.3",
+    "image-downloader": "^4.3.0",
+    "probe-image-size": "^7.2.3",
+    "puppeteer": "^19.8.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/node": "18",
+    "eslint": "^8.37.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.22"
+  }
+}
