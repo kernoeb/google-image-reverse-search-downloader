@@ -2,9 +2,11 @@
 
 ### Usage
 
-> npm i -g pnpm
-> pnpm install
-> pnpm start -i /tmp/Mickey.png -o MickeyHD.png
+```
+npm i -g pnpm
+pnpm install
+pnpm start -i /tmp/Mickey.png -o MickeyHD.png
+```
 
 This is a simple script to download images from [Google Images Reverse Search](https://images.google.com/).
 
