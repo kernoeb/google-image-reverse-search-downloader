@@ -4,9 +4,19 @@ import { parseArgs } from 'node:util'
 import { join } from 'node:path'
 import getLargeImage from './getLargeImage.mjs'
 
-const IMPORT_FILE_SPAN = "//span[contains(., 'importez un fichier')]"
+// Feel free to add your own language here
+const LANGS_TEXT = {
+  fr: {
+    importFile: 'importez un fichier',
+    allSizes: 'Toutes les tailles'
+  }
+}
+
+const LANG = 'fr'
+
+const IMPORT_FILE_SPAN = `//span[contains(., '${LANGS_TEXT[LANG].importFile}')]`
 const LINK_SELECTOR = 'a[href^="https://www.google.com/search?tbs=sbi"]'
-const ALL_SIZES_SELECTOR = "//a[contains(., 'Toutes les tailles')]"
+const ALL_SIZES_SELECTOR = `//a[contains(., '${LANGS_TEXT[LANG].allSizes}')]`
 const DATA_UPLOAD_PATH = "div[data-upload-path='/upload?']"
 
 const options = {
