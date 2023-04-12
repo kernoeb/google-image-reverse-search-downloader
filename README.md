@@ -14,9 +14,9 @@ pnpm start -i /tmp/Mickey.png -o MickeyHD.png
 
 # Note
 
-Only French is supported for now, but feel free to add your own language in the main script (pull request), but it should still work anyway.
-
 It can happen that Google is a bit capricious, so do not hesitate to restart the script. If the waiting period is exceeded, it is very likely that no image has been found.
+
+The script uses French as the browser language, feel free to add your language, but it should still work anyway :)
 
 ----
 
