@@ -15,7 +15,7 @@ export default async (smallimage) => {
       include_pastobjs: true,
       force_page: false,
       allow_thirdparty: false,
-      filter: function (url) {
+      filter: function () {
         return true
       },
       do_request: function (options) {
