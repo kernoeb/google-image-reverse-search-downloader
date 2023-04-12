@@ -13,6 +13,7 @@ const LANGS_TEXT = {
 }
 
 const LANG = 'fr'
+const FULL_LANG = 'fr-FR'
 
 const IMPORT_FILE_SPAN = `//span[contains(., '${LANGS_TEXT[LANG].importFile}')]`
 const LINK_SELECTOR = 'a[href^="https://www.google.com/search?tbs=sbi"]'
@@ -70,13 +71,32 @@ const downloadImage = async (url, path) => {
   await writeFile(path, buffer)
 }
 
+/**
+ * Force the language of the browser
+ * From https://stackoverflow.com/questions/46908636/how-to-specify-browser-language-in-puppeteer
+ * @param page
+ * @returns {Promise<void>}
+ */
+const forceLanguage = async (page) => {
+  page.setExtraHTTPHeaders({ 'Accept-Language': LANG })
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'language', { get: () => FULL_LANG })
+    Object.defineProperty(navigator, 'languages', { get: () => [FULL_LANG, LANG] })
+  })
+}
+
 // ==========
 // PUPPETEER
 // ==========
 
-const browser = await puppeteer.launch({ headless: headlessValue })
+const browser = await puppeteer.launch({
+  headless: headlessValue,
+  args: ['--lang=' + FULL_LANG + ', ' + LANG]
+})
+
 const page = await browser.newPage()
 await page.setViewport({ width: 1920, height: 1080 })
+await forceLanguage(page)
 
 await page.goto('https://www.google.com/imghp', { waitUntil: 'networkidle2' })
 
