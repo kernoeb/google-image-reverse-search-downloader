@@ -143,7 +143,7 @@ await new Promise((resolve) => setTimeout(resolve, 2500))
 console.log('Image clicked')
 
 // find the image inside a link that opens in a new tab
-const IMG_SELECTOR = 'div > div > div > div > div > a[target=_blank] > img'
+const IMG_SELECTOR = 'div > * > div > div > div > a[target=_blank] > img'
 
 await page.waitForFunction(`document.querySelector('${IMG_SELECTOR}').src.startsWith('http')`)
 

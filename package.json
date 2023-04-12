@@ -15,12 +15,12 @@
     "iconv-lite": "^0.6.3",
     "image-downloader": "^4.3.0",
     "probe-image-size": "^7.2.3",
-    "puppeteer": "^19.8.2",
+    "puppeteer": "^19.8.5",
     "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/node": "18",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.7.0",
