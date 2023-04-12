@@ -85,6 +85,13 @@ const forceLanguage = async (page) => {
   })
 }
 
+/**
+ * Pause the execution for a given amount of time
+ * @param ms
+ * @returns {Promise<unknown>}
+ */
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
 // ==========
 // PUPPETEER
 // ==========
@@ -107,7 +114,7 @@ if (cookiesPopup) await cookiesPopup.click()
 console.log('Page loaded, cookies accepted')
 
 // wait for 1 second
-await new Promise((resolve) => setTimeout(resolve, 1000))
+await pause(1000)
 
 // wait for the upload icon to be visible, then click on it
 await page.waitForSelector(DATA_UPLOAD_PATH, { visible: true })
@@ -148,7 +155,7 @@ await allSizes.click()
 console.log('All sizes page loaded')
 
 // wait for 1 second
-await new Promise((resolve) => setTimeout(resolve, 1000))
+await pause(1000)
 
 // wait for the first image to be visible and click on it
 await page.waitForSelector('h3', { visible: true })
@@ -158,7 +165,7 @@ console.log('Clicking on the first image...')
 const firstImage = await page.$('h3 + a > div > img')
 await firstImage.click()
 
-await new Promise((resolve) => setTimeout(resolve, 2500))
+await pause(2500)
 
 console.log('Image clicked')
 
