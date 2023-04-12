@@ -12,7 +12,7 @@ pnpm install
 pnpm start -i /tmp/Mickey.png -o MickeyHD.png
 ```
 
-# Language
+# Note
 
 Only French is supported for now, but feel free to add your own language in the main script (pull request), but it should still work anyway.
 
