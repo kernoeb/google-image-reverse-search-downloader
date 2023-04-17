@@ -140,7 +140,7 @@ await inputUploadHandle.uploadFile(filePath)
 
 console.log('File uploaded')
 
-await pause(1000)
+await pause(2000)
 
 // wait for "Voir la source de l'image" <a> to be visible, get the link starting with https://www.google.com/search?tbs=sbi
 await page.waitForSelector(LINK_SELECTOR, { visible: true })
